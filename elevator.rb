@@ -1,15 +1,18 @@
-current_floor = 0
 
 class Elevator
 	attr_accessor :current_floor
 
-	def go_up current_floor,floors
-        current_floor += floors
+    def initialize
+        @current_floor = 0
+    end
+
+	def go_up floors
+        @current_floor += floors
         greeting current_floor
     end
 
-    def go_down current_floor,floors
-    	current_floor -= floors
+    def go_down floors
+    	@current_floor -= floors
     	greeting current_floor
     end
 
@@ -21,5 +24,5 @@ class Elevator
 end
 
 el = Elevator.new
-el.go_up current_floor,5
-el.go_down current_floor,2
+el.go_up 5
+el.go_down 2
